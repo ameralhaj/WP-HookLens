@@ -1,0 +1,130 @@
+{
+  "projectName": "sample-plugin",
+  "scannedAt": "2026-05-23T20:04:31.642Z",
+  "rootPath": "./examples/sample-plugin",
+  "totalFiles": 1,
+  "totalHooks": 10,
+  "hooks": [
+    {
+      "id": "add_action:1be5d542a60c",
+      "type": "add_action",
+      "name": "init",
+      "callback": "sample_init",
+      "priority": 10,
+      "acceptedArgs": 1,
+      "file": "sample-plugin.php",
+      "line": 6,
+      "column": 1,
+      "raw": "add_action('init', 'sample_init');"
+    },
+    {
+      "id": "add_filter:1e55c82ca98f",
+      "type": "add_filter",
+      "name": "the_content",
+      "callback": "sample_filter_content",
+      "priority": 10,
+      "acceptedArgs": 1,
+      "file": "sample-plugin.php",
+      "line": 7,
+      "column": 1,
+      "raw": "add_filter('the_content', 'sample_filter_content');"
+    },
+    {
+      "id": "shortcode:36433986ae09",
+      "type": "shortcode",
+      "name": "sample_box",
+      "callback": "sample_shortcode",
+      "file": "sample-plugin.php",
+      "line": 8,
+      "column": 1,
+      "raw": "add_shortcode('sample_box', 'sample_shortcode');"
+    },
+    {
+      "id": "do_action:f0e88a92cd30",
+      "type": "do_action",
+      "name": "sample_before_init",
+      "file": "sample-plugin.php",
+      "line": 11,
+      "column": 5,
+      "raw": "do_action('sample_before_init');"
+    },
+    {
+      "id": "apply_filters:d8c3566c6fa9",
+      "type": "apply_filters",
+      "name": "sample_filtered_content",
+      "file": "sample-plugin.php",
+      "line": 15,
+      "column": 12,
+      "raw": "apply_filters('sample_filtered_content', $content);"
+    },
+    {
+      "id": "add_action:8e2ec8fd1087",
+      "type": "add_action",
+      "name": "rest_api_init",
+      "callback": "closure",
+      "priority": 10,
+      "acceptedArgs": 1,
+      "file": "sample-plugin.php",
+      "line": 22,
+      "column": 1,
+      "raw": "add_action('rest_api_init', function () {\n    register_rest_route('sample/v1', '/items', [\n        'methods' => 'GET',\n        'callback' => 'sample_get_items',\n    ]);\n});"
+    },
+    {
+      "id": "rest_route:31accdd4d627",
+      "type": "rest_route",
+      "name": "sample/v1/items",
+      "callback": "sample_get_items",
+      "file": "sample-plugin.php",
+      "line": 23,
+      "column": 5,
+      "raw": "register_rest_route('sample/v1', '/items', [\n        'methods' => 'GET',\n        'callback' => 'sample_get_items',\n    ]);",
+      "namespace": "sample/v1"
+    },
+    {
+      "id": "add_action:2ea864370582",
+      "type": "add_action",
+      "name": "admin_menu",
+      "callback": "$this::register_menu",
+      "priority": 10,
+      "acceptedArgs": 1,
+      "file": "sample-plugin.php",
+      "line": 37,
+      "column": 9,
+      "raw": "add_action('admin_menu', [$this, 'register_menu'], 10, 1);",
+      "methodName": "register_menu"
+    },
+    {
+      "id": "add_filter:1a8739c34299",
+      "type": "add_filter",
+      "name": "the_content",
+      "callback": "$this::filter_content",
+      "priority": 20,
+      "acceptedArgs": 1,
+      "file": "sample-plugin.php",
+      "line": 38,
+      "column": 9,
+      "raw": "add_filter('the_content', [$this, 'filter_content'], 20, 1);",
+      "methodName": "filter_content"
+    },
+    {
+      "id": "rest_route:bb4444356af9",
+      "type": "rest_route",
+      "name": "sample/v1/admin-items",
+      "callback": "$this::get_items",
+      "file": "sample-plugin.php",
+      "line": 50,
+      "column": 9,
+      "raw": "register_rest_route('sample/v1', '/admin-items', [\n            'methods' => 'GET',\n            'callback' => [$this, 'get_items'],\n            'permission_callback' => '__return_true',\n        ]);",
+      "namespace": "sample/v1",
+      "methodName": "get_items"
+    }
+  ],
+  "stats": {
+    "actions": 3,
+    "filters": 2,
+    "doActions": 1,
+    "applyFilters": 1,
+    "shortcodes": 1,
+    "restRoutes": 2
+  }
+}
