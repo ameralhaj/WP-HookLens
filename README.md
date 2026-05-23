@@ -1,8 +1,8 @@
 # WP HookLens
 
-WP HookLens is an open source developer tool for scanning WordPress plugins and themes and detecting actions, filters, shortcodes, and REST API routes.
+WP HookLens is an open source TypeScript CLI for scanning WordPress plugins and themes and detecting actions, filters, shortcodes, and REST API routes.
 
-It ships as a TypeScript CLI today, with a Vite + React demo site for exploring sample reports.
+Public demo: [https://wp-hooklens.vercel.app](https://wp-hooklens.vercel.app)
 
 ## Features
 
@@ -17,7 +17,6 @@ It ships as a TypeScript CLI today, with a Vite + React demo site for exploring 
 - Extract callback, priority, accepted args, file, line, column, and raw code
 - Export JSON reports
 - Export Markdown reports
-- Preview a report in the React demo site
 
 ## Installation
 
@@ -38,27 +37,10 @@ npm run build
 npm run start -- scan ./examples/sample-plugin --out ./reports/hooklens-report.json --markdown ./reports/hooklens-report.md --pretty
 ```
 
-## Demo Site
-
-Run the Vite demo locally:
-
-```bash
-npm run web:dev
-```
-
-Build the Vercel-ready static site:
-
-```bash
-npm run web:build
-```
-
-Vercel is configured through `vercel.json` to build the web demo from the root package and serve `web/dist`.
-
 ## Repository Structure
 
 ```text
 src/       CLI, scanner, exporters, types, utilities
-web/       Vite React demo site
 docs/      Project documentation
 examples/  Sample WordPress plugin
 reports/   Example JSON and Markdown reports
@@ -75,7 +57,8 @@ reports/   Example JSON and Markdown reports
 
 ## Roadmap
 
-- React + Tailwind report upload UI
+- npm package publishing
+- React + Tailwind report UI
 - Graph view
 - REST route security warnings
 - Missing callback detection
